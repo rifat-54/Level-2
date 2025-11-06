@@ -1,4 +1,4 @@
-class Stack{
+export class Stack{
     constructor(){
         this.item=[];
     }
@@ -26,19 +26,19 @@ class Stack{
     }
 }
 
-const stack=new Stack()
+// const stack=new Stack()
 // console.log(stack.isEmpty());
 // console.log(stack.print());
-stack.push(1)
-stack.push(2)
-stack.push(3)
-stack.push(4)
-console.log(stack.peek());
-stack.print()
-console.log(stack.pop());
-console.log(stack.peek());
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.pop());
-console.log(stack.peek());
+// stack.push(1)
+// stack.push(2)
+// stack.push(3)
+// stack.push(4)
+// console.log(stack.peek());
+// stack.print()
+// console.log(stack.pop());
+// console.log(stack.peek());
+// console.log(stack.pop());
+// console.log(stack.pop());
+// console.log(stack.pop());
+// console.log(stack.pop());
+// console.log(stack.peek());
