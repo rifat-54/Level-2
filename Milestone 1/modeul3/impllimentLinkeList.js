@@ -28,7 +28,7 @@ class linkedList {
     return this;
   }
 
-  prepent(value) {
+  prepend(value) {
     const newNode = new Node(value);
     if (this.head === null) {
       this.head = newNode;
@@ -50,7 +50,7 @@ class linkedList {
     }
 
     if (index === 0) {
-      return this.prepent(value);
+      return this.prepend(value);
     }
 
     if (index === this.length) {
@@ -66,6 +66,25 @@ class linkedList {
     // const tempNode=currentNode.next;
     // currentNode.next=newNode;
     // newNode.next=tempNode;
+  }
+
+  remove(index){
+
+    if(index==0){
+        const deltedNode=this.head;
+        this.head=this.head.next;
+        if(deltedNode.next===null){
+            this.tail=null;
+        }
+        return  deltedNode.value;
+    }
+    const leadingNode=this._traverseToIndex(index)
+    const deltedNode=leadingNode.next;
+    leadingNode.next=leadingNode.next.next;
+    if(leadingNode.next===null){
+        this.tail=leadingNode;
+    }
+    return deltedNode.value;
   }
 
   _traverseToIndex(index) {
@@ -93,12 +112,17 @@ class linkedList {
 }
 
 const linkedlist = new linkedList();
-linkedlist.append(1).append(2).append(3);
-// linkedlist.append(2);
-// linkedlist.append(3);
-// linkedlist.append(4);
+// linkedlist.append(1).append(2).append(3);
+linkedlist.append(1)
+linkedlist.append(2);
+linkedlist.append(3);
+linkedlist.append(4);
 
-linkedlist.prepent(40).prepent(60);
-// linkedlist.prepent(50);
-linkedlist.insert(2, 100);
+// linkedlist.prepend(40).prepend(60);
+// linkedlist.prepend(50);
+// linkedlist.insert(2, 100);
 linkedlist.print();
+
+console.log(linkedlist.remove(2));
+
+linkedlist.print()
